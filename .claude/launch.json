@@ -3,9 +3,10 @@
   "configurations": [
     {
       "name": "bpp-static-site",
-      "runtimeExecutable": "python3",
-      "runtimeArgs": ["-m", "http.server", "8420", "--directory", "/Users/vaibhav/bppwebsite"],
-      "port": 8420
+      "runtimeExecutable": "sh",
+      "runtimeArgs": ["-c", "python3 -m http.server $PORT --directory /Users/vaibhav/bppwebsite"],
+      "port": 8420,
+      "autoPort": true
     },
     {
       "name": "dashboard-dev",

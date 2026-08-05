@@ -107,6 +107,10 @@
                 <input type="text" id="name" name="name" required>
               </div>
               <div class="field">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+              </div>
+              <div class="field">
                 <label for="company">Company</label>
                 <input type="text" id="company" name="company">
               </div>
@@ -138,11 +142,15 @@
               </div>
               <div class="field full">
                 <label for="message">Luminaire schedule, required finish &amp; other details</label>
-                <textarea id="message" name="message"></textarea>
+                <textarea id="message" name="message" required></textarea>
               </div>
             </div>
+            <div class="field" style="position:absolute; left:-9999px;" aria-hidden="true">
+              <label for="website">Leave this field blank</label>
+              <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
+            </div>
             <button type="submit" class="btn btn-gold btn-block mt-24">Send Enquiry</button>
-            <p class="form-note">Submitting opens your email client addressed to sales@bppsales.com with these details prefilled; nothing is sent automatically.</p>
+            <p class="form-note" id="form-status">We revert with a GA drawing and foundation design, usually within one working day.</p>
           </form>
         </div>
 

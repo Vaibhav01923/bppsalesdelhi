@@ -67,7 +67,7 @@ module.exports = async (req, res) => {
   `;
 
   try {
-    await resend.emails.send({
+    const result = await resend.emails.send({
       from: fromEmail,
       to: toEmail,
       reply_to: email,
@@ -75,6 +75,12 @@ module.exports = async (req, res) => {
       text,
       html
     });
+
+    if (result.error) {
+      console.error("Resend API error:", result.error);
+      return res.status(502).json({ ok: false, error: result.error.message || "Could not send your enquiry." });
+    }
+
     return res.status(200).json({ ok: true });
   } catch (err) {
     console.error("Resend send failed:", err);
